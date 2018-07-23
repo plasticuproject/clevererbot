@@ -24,7 +24,7 @@ cb = cleverbotfree.cbfree.Cleverbot()
 def main():
 
     try:
-        print('[-] Connecting to Cleverbot.com...')
+        print('\n[-] Connecting to Cleverbot.com...')
         try:
             cb.browser.get(cb.url)
         except:
@@ -40,7 +40,7 @@ def main():
             try:
                 cb.get_form()
             except:
-                cb.browser.close()
+                sys.exit()
             userInput = input('\033[1;94m USER: \033[1;37m')
             if userInput == 'quit':
                 break
