@@ -35,9 +35,12 @@ def main():
         print('[-] Have a conversation with CleverBot...')
         print('[-] Just type "quit" to end the conversation\n')
         os.system('espeak -v english-us "Have a conversation with me."')
-        os.system('espeak -v english-us "I am kind of an jerk but, whatever."')
+        os.system('espeak -v english-us "I am kind of a jerk but, whatever."')
         while True:
-            cb.get_form()
+            try:
+                cb.get_form()
+            except:
+                cb.browser.close()
             userInput = input('\033[1;94m USER: \033[1;37m')
             if userInput == 'quit':
                 break
