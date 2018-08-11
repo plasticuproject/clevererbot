@@ -34,8 +34,8 @@ def main():
             sys.exit()
         print('[-] Have a conversation with CleverBot...')
         print('[-] Just type "quit" to end the conversation\n')
-        os.system('espeak -v english-us "Have a conversation with me."')
-        os.system('espeak -v english-us "I am kind of a jerk but, whatever."')
+        os.system('espeak "Have a conversation with me."')
+        os.system('espeak "I am kind of a jerk but, whatever."')
         while True:
             try:
                 cb.get_form()
@@ -46,7 +46,7 @@ def main():
                 break
             cb.send_input(userInput)
             bot = cb.get_response()
-            print('\033[1;92m CLEVERBOT: \033[1;37m', bot) , os.system('espeak -v english-us "{}"' .format(bot))
+            print('\033[1;92m CLEVERBOT: \033[1;37m', bot) , os.system('espeak "{}"' .format(bot))
         cb.browser.close()
     except KeyboardInterrupt:
         print('\n\n[-] Thanks for chatting!\n')
